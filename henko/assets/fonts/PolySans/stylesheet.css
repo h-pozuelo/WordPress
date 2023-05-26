@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'PolySans';
+    src: url('./PolySans-Neutral-web/PolySans-Neutral.woff2') format('woff2'),
+        url('./PolySans-Neutral-web/PolySans-Neutral.woff') format('woff'),
+        url('./PolySans-Neutral/PolySans-Neutral.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('./PolySans-Median-web/PolySans-Median.woff2') format('woff2'),
+        url('./PolySans-Median-web/PolySans-Median.woff') format('woff'),
+        url('./PolySans-Median/PolySans-Median.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}

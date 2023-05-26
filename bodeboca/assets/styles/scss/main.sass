@@ -1,0 +1,388 @@
+$black-100: #000000
+$black-50: #00000080
+$blue-facebook-100: #3479EA
+$blue-link-bodeboca-100: #0197CD
+$light-green-bb-100: #A9C200
+$light-grey-bodeboca-100: #F5F5F5
+$red-warning-100: #FF0000
+$white-100: #FFFFFF
+$min-tableta: 768px
+$min-escritorio: 1200px
+
+*,
+*::before,
+*::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    position: relative
+
+body
+    padding-top: 51px
+    >h1
+        color: $black-100
+        font-family: 'Gotham', sans-serif
+        font-size: 24px
+        font-style: normal
+        font-weight: 600
+        line-height: 30px
+        text-align: center
+        width: calc( 100% - 112px )
+        max-width: 278px
+        margin: 0 auto 24px
+
+@media screen and ( min-width: $min-tableta)
+    body
+        padding-top: 116px
+        h1
+            width: 100%
+            max-width: unset
+            line-height: 24px
+            margin: 0
+            margin-bottom: 30px
+
+.cabecera
+    width: 100%
+    height: 51px
+    background-color: $white-100
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    gap: 0
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1
+    .logotipo
+        display: block
+        &.logotipo-escritorio
+            display: none
+
+@media screen and ( min-width: $min-tableta)
+    .cabecera
+        height: 116px
+        .logotipo
+            &.logotipo-movil
+                display: none
+            &.logotipo-escritorio
+                display: block
+
+.conjunto
+    margin-bottom: 48px
+    .banner
+        width: 100%
+        height: auto
+        .fondo
+            width: 100%
+            height: 305px
+            display: block
+            margin-bottom: 36px
+            object-fit: cover
+            object-position: 50% 50%
+    .conjunto-formulario
+        width: calc( 100% - 48px )
+        max-width: 342px
+        height: auto
+        min-height: 448px
+        background-color: $white-100
+        margin: 0 auto
+        padding: 24px 30px
+        border-radius: 18px
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.25)
+        p,
+        label
+            color: $black-100
+            font-family: Arial, Helvetica, sans-serif
+            font-size: 12px
+            font-style: normal
+            font-weight: 400
+            line-height: 15px
+            text-align: left
+        a
+            color: $blue-link-bodeboca-100
+            text-decoration: none
+        h1
+            color: $black-100
+            font-family: 'Brandon Grotesque', sans-serif
+            font-size: 16px
+            font-style: normal
+            font-weight: 420
+            line-height: 20px
+            text-align: center
+            white-space: pre-line
+            margin-bottom: 16px
+            span
+                font-size: 20px
+                font-weight: 900
+        >.fila
+            margin-bottom: 16px
+            .columna
+                width: 100%
+                height: auto
+                display: flex
+                flex-direction: column
+                gap: 16px
+                &:first-child
+                    margin-bottom: 24px
+                    padding-bottom: 24px
+                    &::after
+                        content: ''
+                        width: 150px
+                        height: 1px
+                        background-color: $black-100
+                        margin: auto
+                        position: absolute
+                        right: 0
+                        bottom: 0
+                        left: 0
+                    input
+                        &[type='email']
+                            font-family: Arial, Helvetica, sans-serif
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 20px
+                            height: 52px
+                            background-color: $light-grey-bodeboca-100
+                            padding: 16px
+                            border: none
+                    .fila
+                        display: flex
+                        flex-direction: row
+                        justify-content: flex-start
+                        align-items: flex-start
+                        gap: 12px
+                        input
+                            width: 24px
+                            height: 24px
+                            display: block
+                            margin-right: 12px
+                            &::after
+                                content: ''
+                                width: 24px
+                                height: 24px
+                                background-color: $white-100
+                                position: absolute
+                                top: 0
+                                left: 0
+                                outline: 1px solid $black-100
+                            &:checked
+                                &::after
+                                    width: 24px
+                                    height: 24px
+                                    background-color: $black-100
+                                    border: 2px solid $white-100
+                                    outline: 1px solid $black-100
+                        label
+                            &::after
+                                content: ' *'
+                                color: $red-warning-100
+                    >p
+                        display: none
+                    input
+                        &[type='submit']
+                            color: $white-100
+                            font-family: 'Brandon Grotesque',sans-serif
+                            font-size: 20px
+                            font-style: normal
+                            font-weight: 900
+                            line-height: 20px
+                            text-align: center
+                            height: 48px
+                            background-color: $light-green-bb-100
+                            border: none
+                            border-radius: 6px
+                            &:hover
+                                cursor: pointer
+                &:last-child
+                    p
+                        font-size: 16px
+                        text-align: center
+                    button
+                        color: $white-100
+                        font-family: Arial, Helvetica, sans-serif
+                        font-size: 16px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 20px
+                        text-align: center
+                        height: 40px
+                        background-color: $blue-facebook-100
+                        padding: 10px 20px
+                        border: none
+                        border-radius: 6px
+                        &::before
+                            content: url('../../images/png/Facebook_Icono.png')
+                            margin-right: 12px
+                            vertical-align: middle
+                        &:hover
+                            cursor: pointer
+        >p
+            &:last-of-type
+                &::before
+                    content: '* '
+                    color: $red-warning-100
+
+@media screen and ( min-width: $min-tableta)
+    .conjunto
+        margin-bottom: 60px
+        .banner
+            .fondo
+                height: auto
+                max-height: 685px
+                display: block
+                margin-bottom: -12.50%
+        .conjunto-formulario
+            max-width: 974px
+            min-height: 297px
+            padding: 30px
+            p
+                text-align: center
+            h1
+                font-size: 24px
+                white-space: normal
+                margin-bottom: 24px
+                span
+                    font-size: 32px
+            >.fila
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                gap: 0
+                margin-bottom: 24px
+                .columna
+                    width: 50%
+                    &:first-child
+                        gap: 12px
+                        margin: 0 20px 0 0
+                        padding: 0 20px 0 0
+                        &::after
+                            width: 1px
+                            height: 154px
+                            top: 0
+                            left: auto
+                        input
+                            &[type='email']
+                                font-size: 14px
+                    &:last-child
+                        gap: 20px
+                        button
+                            height: 48px
+
+@media screen and ( min-width: $min-escritorio)
+    .conjunto
+        height: 685px
+        .banner
+            .fondo
+                width: calc( 100% - 528px )
+                height: 685px
+                max-height: unset
+                margin: 0
+                float: left
+        .conjunto-formulario
+            width: 528px
+            max-width: unset
+            height: 685px
+            min-height: unset
+            background-color: $light-grey-bodeboca-100
+            margin: 0
+            padding: 80px 100px 30px 50px
+            border-radius: 0
+            box-shadow: none
+            float: left
+            p
+                text-align: left
+            h1
+                line-height: 32px
+                text-align: left
+                white-space: pre-line
+                margin-bottom: 40px
+            >.fila
+                display: block
+                margin: 0
+                .columna
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    &:first-child
+                        gap: 16px
+                        margin: 0
+                        margin-bottom: 24px
+                        padding: 0
+                        padding-bottom: 24px
+                        &::after
+                            width: 150px
+                            height: 1px
+                            top: auto
+                            left: 0
+                        input
+                            &[type='email']
+                                background-color: $white-100
+                                border: 1px solid $black-50
+                        >p
+                            display: block
+                            margin-top: -8px
+                            &::before
+                                content: '* '
+                                color: $red-warning-100
+                    &:last-child
+                        p
+                            text-align: left
+            >p
+                &:last-of-type
+                    display: none
+
+.cuadricula
+    display: grid
+    grid-template-columns: repeat(1, auto)
+    justify-content: center
+    align-items: normal
+    gap: 24px
+    .celda
+        width: 279px
+        height: 279px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 10px
+        border-radius: 6px
+        overflow: hidden
+        img
+            width: 100%
+            height: 100%
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            object-fit: cover
+            object-position: 50% 50%
+        h2
+            color: $white-100
+            font-family: 'Gotham', sans-serif
+            font-size: 24px
+            font-style: normal
+            font-weight: 600
+            line-height: 24px
+            text-align: center
+            white-space: pre-line
+        p
+            color: $white-100
+            font-family: Arial, Helvetica, sans-serif
+            font-size: 15px
+            font-style: normal
+            font-weight: 400
+            line-height: 15px
+            text-align: center
+            display: none
+
+@media screen and ( min-width: $min-tableta)
+    .cuadricula
+        grid-template-columns: repeat(2, auto)
+        gap: 30px
+
+@media screen and ( min-width: $min-escritorio)
+    .cuadricula
+        grid-template-columns: repeat(3, auto)
